@@ -138,7 +138,7 @@ There are no blockers affecting the scoring fix itself. However, while tracing t
 
 ### Check-in 2 (end of week)
 
-**PR link:** [link to your submitted pull request]
+**PR link:** https://github.com/ascherj/pathreview/pull/764
 
 **Branch:** `fix/24-hybrid-retriever-keyword-weighting`
 
