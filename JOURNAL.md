@@ -151,3 +151,36 @@ I changed the score blending in `HybridRetriever.retrieve()` so the keyword cont
 **Self-review confirmation:** [✓] make check passes  [✓] make test-unit passes
 
 **Draft PR feedback received from:** [name or Slack handle, or "none"]
+
+
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [X] No — still awaiting review
+
+**Summary of feedback:**
+No reviewer feedback was received. The PR is still open and awaiting maintainer review. GitHub currently shows no reviewer comments or submitted reviews.
+
+**How you responded:**
+No response or additional changes were needed because no reviewer feedback was provided.
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+The hardest part was understanding how the hybrid retriever actually combined vector and keyword scores. At first, I thought the issue would only require changing the weights, but after tracing the code I found that the real problem was that the keyword score was added independently of semantic relevance. I also had to separate failures caused by my changes from failures that already existed in the repository, which took more investigation than I expected.
+
+**What did you learn about working in a large codebase?**
+I learned that working in someone else's codebase requires much more investigation before making changes. In my own projects, I usually know how everything is connected, but here I had to trace the retrieval flow, understand existing tests, and make sure I was not changing behavior outside the issue's scope. I also learned that it is important to keep a contribution focused instead of trying to fix every unrelated problem I discover.
+
+**How did AI tools help — and where did they fall short?**
+AI tools helped me understand unfamiliar parts of the codebase, reason through the scoring formula, compare possible solutions such as Reciprocal Rank Fusion, and debug errors during testing. They were also useful for explaining Git and open-source workflows. However, AI could not determine the correct solution by itself. I still had to inspect the actual code, run the tests, compare different approaches, and verify whether suggestions matched the behavior of the repository.
+
+**What would you do differently if you started over?**
+I would spend more time at the beginning tracing the full execution path and running the complete test suite before making changes. That would help me identify pre-existing failures earlier and understand the baseline state of the repository. I would also document findings as I discover them instead of waiting until later, because several important details, such as the unused keyword indexing path and the difference between the issue description and the actual default weights, only became clear after deeper investigation.
+
+**What are you most proud of from this module?**
+I am most proud that I did more than simply change one line of code. I reproduced the bug with tests, traced the cause of the ranking problem, compared multiple possible solutions, implemented a focused fix, and verified that all six hybrid retriever tests passed. I also identified additional issues in the retrieval flow without expanding the scope of my PR unnecessarily. This gave me a better understanding of how a real open-source contribution should be investigated, tested, and documented.
